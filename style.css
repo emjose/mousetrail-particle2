@@ -1,18 +1,58 @@
+:root {
+	--white: #fff;
+	--black: #000;
+	--github-fill: rgb(630, 9, 136);
+	--github-color: var(--white);
+	--github-focus: var(--black);
+}
+
 #canvas1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  /* background: black; */
-  /* background: linear-gradient(#25364f, #4d71a5, #9bc4ff); */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -10;
+	cursor: pointer;
+}
 
-  /* background: linear-gradient(#000000, #2f2f30, #696969); */
+.github-corner:focus svg path {
+	fill: var(--github-focus);
+}
 
-  /* color: rgb(55, 11, 175);
-  color: rgb(40, 5, 136); */
-  /* color: rgb(235, 0, 51); */
+.github-corner:focus .octo-arm,
+.github-corner:focus .octo-body {
+	fill: var(--github-color);
+}
 
-  cursor: pointer;
+.github-corner:focus .octo-arm,
+.github-corner:hover .octo-arm {
+	animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+	0%,
+	100% {
+		transform: rotate(0);
+	}
+
+	20%,
+	60% {
+		transform: rotate(-25deg);
+	}
+
+	40%,
+	80% {
+		transform: rotate(10deg);
+	}
+}
+
+@media (max-width: 500px) {
+	.github-corner:hover .octo-arm {
+		animation: none;
+	}
+
+	.github-corner .octo-arm {
+		animation: octocat-wave 560ms ease-in-out;
+	}
 }
